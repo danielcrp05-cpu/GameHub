@@ -1,0 +1,59 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+form {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+input,
+select,
+textarea,
+button {
+  padding: 0.7rem;
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+article {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+article img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
