@@ -39,16 +39,43 @@ const getGameById = async (req, res, next) => {
   }
 };
 
+
 const updateGame = async (req, res, next) => {
   try {
+    const allowedFields = [
+      "title",
+      "description",
+      "genre",
+      "platform",
+      "releaseYear",
+      "rating",
+      "status",
+    ];
+
+    const updates = {};
+
+    for (const field of allowedFields) {
+      if (Object.prototype.hasOwnProperty.call(req.body, field)) {
+        updates[field] = req.body[field];
+      }
+    }
+
+    if (Object.keys(updates).length === 0) {
+      return res.status(400).json({
+        message: "Envie pelo menos um campo válido para atualizar.",
+      });
+    }
+
     const game = await Game.findOneAndUpdate(
       { _id: req.params.id, owner: req.user.id },
-      req.body,
+      { $set: updates },
       { new: true, runValidators: true }
     );
 
     if (!game) {
-      return res.status(404).json({ message: "Jogo não encontrado." });
+      return res.status(404).json({
+        message: "Jogo não encontrado.",
+      });
     }
 
     res.json(game);

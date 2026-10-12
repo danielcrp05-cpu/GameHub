@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import GameCard from "../components/GameCard";
 import GameForm from "../components/GameForm";
 import api from "../services/api";
