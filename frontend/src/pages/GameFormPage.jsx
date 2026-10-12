@@ -1,6 +1,6 @@
 // Reservado para uma futura tela dedicada de cadastro/edição.
 // O CRUD inicial utiliza o componente GameForm dentro da página Games.
-
+import React, { useState } from 'react';
 function GameFormPage() {
   return (
     <main>
