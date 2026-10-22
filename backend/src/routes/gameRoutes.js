@@ -1,4 +1,6 @@
+
 const express = require("express");
+
 const {
   createGame,
   getGames,
@@ -6,11 +8,16 @@ const {
   updateGame,
   deleteGame,
 } = require("../controllers/gameController");
+
+const { searchRawgGames } = require("../controllers/rawgController");
 const authMiddleware = require("../middlewares/authMiddleware");
 
 const router = express.Router();
 
 router.use(authMiddleware);
+
+// A rota de pesquisa precisa ficar antes de /:id.
+router.get("/search", searchRawgGames);
 
 router.post("/", createGame);
 router.get("/", getGames);

@@ -6,6 +6,7 @@ const mongoose = require("mongoose");
 
 const authRoutes = require("./routes/authRoutes");
 const gameRoutes = require("./routes/gameRoutes");
+const ratingRoutes = require("./routes/ratingRoutes");
 const errorMiddleware = require("./middlewares/errorMiddleware");
 
 const app = express();
@@ -20,6 +21,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/games", gameRoutes);
+app.use("/api/ratings", ratingRoutes);
 
 app.use(errorMiddleware);
 
