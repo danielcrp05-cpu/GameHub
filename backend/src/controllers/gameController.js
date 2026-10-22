@@ -50,6 +50,8 @@ const updateGame = async (req, res, next) => {
       "releaseYear",
       "rating",
       "status",
+      "rawgId",
+      "rawgSlug",
     ];
 
     const updates = {};

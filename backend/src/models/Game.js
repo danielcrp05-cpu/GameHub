@@ -43,6 +43,17 @@ const gameSchema = new mongoose.Schema(
       trim: true,
       default: "",
     },
+    
+    rawgId: {
+      type: Number,
+      default: null,
+    },
+    rawgSlug: {
+      type: String,
+      trim: true,
+      default: "",
+    },
+
     owner: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
