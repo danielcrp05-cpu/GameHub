@@ -202,61 +202,35 @@ A atividade utiliza ferramentas de inteligência artificial como apoio ao proces
 
 - **Google Stitch:** Design a high-fidelity, modern, responsive web interface for GameHub, a personal video game library and game collection management platform.
 Visual Style
-
-
 Use a dark gaming aesthetic with a deep navy background (#081321).
-
 Use neon cyan (#00F0FF) as the primary accent color, combined with electric blue highlights.
-
 Add subtle neon glows, soft shadows, smooth rounded corners, and modern typography.
-
 The interface should feel premium, futuristic, immersive, and inspired by modern gaming platforms.
-
 Maintain excellent readability, visual hierarchy, and contrast.
 Main Layout
-
-
 Navigation Bar: Create a sleek navigation bar with the GameHub logo, links for Home, My Library, Game Catalog, and a user profile section.
-
 Hero Section: Include a large welcome banner with the headline "Your Gaming Universe", a short subtitle about organizing and discovering games, and a prominent cyan call-to-action button labeled "Explore Games".
-
 Library Statistics: Display three compact statistic cards showing Total Games, Currently Playing, and Completed Games. Use simple icons and clear numbers.
-
 Game Collection: Create a responsive grid of attractive game cards featuring cover artwork, game title, genre, rating, and completion status. Include these games:
-
-
 Elden Ring — Action RPG
-
 God of War Ragnarök — Action Adventure
-
 Cyberpunk 2077 — Open-World RPG
-
 Red Dead Redemption 2 — Action Adventure
-
 Hollow Knight — Metroidvania
-
 Forza Horizon 5 — Racing
-
 Game Cards: Each card should include a high-quality cover image, a dark gradient overlay, readable text, a small genre label, and a clear status badge such as "Playing", "Completed", or "Want to Play". Add subtle hover effects and cyan highlights.
-
 Search and Filters: Add a search field and filter controls to help users find games by genre or status.
-
 Footer: Include a minimal footer consistent with the gaming aesthetic.
 Component-Based Design Structure the interface around reusable components such as Navbar, HeroBanner, StatisticsCard, GameCard, SearchBar, FilterMenu, and Footer. Keep the layout organized and consistent.
 Responsive Design Ensure the interface adapts smoothly to desktop, tablet, and mobile screens. On smaller screens, use a collapsible navigation menu and a responsive game grid.
 Important Requirements
-
-
 Use realistic gaming content instead of Lorem Ipsum.
-
 Prioritize visual quality, usability, accessibility, and consistency.
-
 Make the game cover images visually prominent.
-
 Keep the design clean and organized without excessive visual effects.
-
 Generate a complete, polished UI prototype suitable for implementation with React and Tailwind CSS.
 Create the main GameHub dashboard screen as the primary design, with a strong focus on the game collection and the neon gaming aesthetic.
+
 - **v0 by Vercel:** Build a modern, responsive gaming dashboard for a project called GameHub using React and Tailwind CSS.  Use the following design direction: - Dark navy background (#081321). - Neon cyan primary accent (#00F0FF). - Electric blue highlights and subtle glow effects. - Modern typography, rounded cards, soft shadows, and a premium gaming aesthetic.  Create the main dashboard with these reusable React components: 1. Navbar — GameHub logo, Home, My Library, Game Catalog, and user profile. 2. HeroBanner — title "Your Gaming Universe", subtitle, and an "Explore Games" button. 3. StatisticsCard — total games, currently playing, and completed games. 4. SearchBar — search games by title. 5. FilterMenu — filter games by genre and completion status. 6. GameCard — cover image, title, genre, rating, and status badge. 7. GameGrid — responsive grid that renders GameCard components. 8. Footer — minimal footer matching the theme.  Use these six example games: - Elden Ring — Action RPG - God of War Ragnarök — Action Adventure - Cyberpunk 2077 — Open-World RPG - Red Dead Redemption 2 — Action Adventure - Hollow Knight — Metroidvania - Forza Horizon 5 — Racing  Requirements: - Use React functional components and JavaScript. - Use Tailwind CSS for styling. - Store the example games in an array of JavaScript objects using React useState. - Render the games dynamically with map(), using a unique key for each item. - Implement working search and genre/status filters. - Use reusable components with props. - Use responsive layouts for desktop, tablet, and mobile. - Use realistic game cover artwork and avoid Lorem Ipsum. - Keep the code clean, accessible, and easy to integrate into an existing Vite React project. - Do not create a backend or database; use mock data only.  Generate the dashboard UI and its component code. Explain which files contain each component and any dependencies required. 
 
 ## Captura de tela
