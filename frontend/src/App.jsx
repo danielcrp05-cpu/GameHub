@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Games from "./pages/Games";
+import ChangePassword from "./pages/ChangePassword";
 
 function AppContent() {
   const navigate = useNavigate();
@@ -40,6 +41,14 @@ function AppContent() {
         <Route path="/register" element={user ? <Navigate to="/" replace /> : <Register />} />
         <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
         <Route path="/games" element={<ProtectedRoute><Games /></ProtectedRoute>} />
+        <Route
+          path="/change-password"
+          element={
+            <ProtectedRoute>
+              <ChangePassword />
+            </ProtectedRoute>
+          }
+        />
         <Route path="*" element={<Navigate to={user ? "/" : "/login"} replace />} />
       </Routes>
     </>

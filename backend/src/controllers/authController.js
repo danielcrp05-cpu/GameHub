@@ -58,4 +58,62 @@ const login = async (req, res, next) => {
   }
 };
 
-module.exports = { register, login };
+
+const changePassword = async (req, res, next) => {
+  try {
+    const { currentPassword, newPassword } = req.body || {};
+
+    if (
+      typeof currentPassword !== "string" ||
+      typeof newPassword !== "string" ||
+      !currentPassword ||
+      !newPassword
+    ) {
+      return res.status(400).json({
+        message: "Informe a senha atual e a nova senha.",
+      });
+    }
+
+    if (newPassword.length < 8) {
+      return res.status(400).json({
+        message: "A nova senha deve ter pelo menos 8 caracteres.",
+      });
+    }
+
+    if (currentPassword === newPassword) {
+      return res.status(400).json({
+        message: "A nova senha deve ser diferente da senha atual.",
+      });
+    }
+
+    const user = await User.findById(req.user.id);
+
+    if (!user) {
+      return res.status(404).json({
+        message: "Usuário não encontrado.",
+      });
+    }
+
+    const passwordMatches = await bcrypt.compare(
+      currentPassword,
+      user.password
+    );
+
+    if (!passwordMatches) {
+      return res.status(401).json({
+        message: "Senha atual incorreta.",
+      });
+    }
+
+    user.password = await bcrypt.hash(newPassword, 10);
+    await user.save();
+
+    return res.status(200).json({
+      message: "Senha alterada com sucesso.",
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { register, login, changePassword };
