@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Games from "./pages/Games";
 import ChangePassword from "./pages/ChangePassword";
+import Explore from "./pages/Explore";
 
 function AppContent() {
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ function AppContent() {
         <Route path="/login" element={user ? <Navigate to="/" replace /> : <Login onLogin={handleLogin} />} />
         <Route path="/register" element={user ? <Navigate to="/" replace /> : <Register />} />
         <Route path="/" element={<ProtectedRoute><Home /></ProtectedRoute>} />
+        <Route path="/explorar" element={<ProtectedRoute><Explore /></ProtectedRoute>} />
         <Route path="/games" element={<ProtectedRoute><Games /></ProtectedRoute>} />
         <Route
           path="/change-password"

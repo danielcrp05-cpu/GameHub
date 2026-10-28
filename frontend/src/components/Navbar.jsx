@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { Gamepad2, LogOut, Plus, LibraryBig, House, KeyRound} from "lucide-react";
+import { Gamepad2, LogOut, Plus, LibraryBig, House, KeyRound, Compass } from "lucide-react";
 
 export default function Navbar({ user, onLogout }) {
   const displayName = user?.name || user?.username || user?.email || "Jogador";
@@ -17,6 +17,9 @@ export default function Navbar({ user, onLogout }) {
       <nav className="gamehub-nav" aria-label="Navegação principal">
         <NavLink to="/" end className={({ isActive }) => `gamehub-nav-link${isActive ? " active" : ""}`}>
         <House size={16}/>Início
+        </NavLink>
+        <NavLink to="/explorar" className={({ isActive }) => `gamehub-nav-link${isActive ? " active" : ""}`}>
+        <Compass size={16}/>Explorar
         </NavLink>
         <NavLink to="/games" className={({ isActive }) => `gamehub-nav-link${isActive ? " active" : ""}`}>
         <LibraryBig size={16}/>Minha biblioteca

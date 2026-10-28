@@ -9,7 +9,7 @@ const {
   deleteGame,
 } = require("../controllers/gameController");
 
-const { searchRawgGames } = require("../controllers/rawgController");
+const { searchRawgGames, exploreRawgGames } = require("../controllers/rawgController");
 const authMiddleware = require("../middlewares/authMiddleware");
 
 const router = express.Router();
@@ -18,6 +18,7 @@ router.use(authMiddleware);
 
 // A rota de pesquisa precisa ficar antes de /:id.
 router.get("/search", searchRawgGames);
+router.get("/explore", exploreRawgGames);
 
 router.post("/", createGame);
 router.get("/", getGames);
