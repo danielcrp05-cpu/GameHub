@@ -65,8 +65,8 @@ function Home() {
           <h1>Seu próximo mundo<br />está <span>esperando.</span></h1>
           <p>Organize sua coleção, acompanhe sua jornada e descubra qual aventura vem a seguir.</p>
           <div className="dashboard-hero-actions">
-            <Link className="dashboard-button dashboard-button-primary" to="/games">
-              Explorar catálogo <ArrowRight size={17} />
+            <Link className="dashboard-button dashboard-button-primary" to="/explorar">
+             Explorar catálogo <ArrowRight size={17} />
             </Link>
             <Link className="dashboard-button dashboard-button-ghost" to="/games#formulario-jogo">
               <Gamepad2 size={17} /> Adicionar jogo
