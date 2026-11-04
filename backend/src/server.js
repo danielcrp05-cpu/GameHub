@@ -7,21 +7,41 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
 const gameRoutes = require("./routes/gameRoutes");
 const ratingRoutes = require("./routes/ratingRoutes");
+const userRoutes = require("./routes/userRoutes");
 const errorMiddleware = require("./middlewares/errorMiddleware");
+const authMiddleware = require("./middlewares/authMiddleware");
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(cors());
+
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+  })
+);
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({ message: "GameHub API funcionando." });
 });
 
+
+app.get("/api/dashboard", authMiddleware, (req, res) => {
+  res.json({
+    message: "Bem-vindo ao dashboard do GameHub!",
+    user: {
+      id: req.user.id,
+      email: req.user.email,
+    },
+  });
+});
+
 app.use("/api/auth", authRoutes);
 app.use("/api/games", gameRoutes);
 app.use("/api/ratings", ratingRoutes);
+app.use("/api/users", userRoutes);
 
 app.use(errorMiddleware);
 
