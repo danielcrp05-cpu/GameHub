@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
-import "./Login.css";
+import "./login.css";
 
 function ChangePassword() {
   const navigate = useNavigate();
