@@ -7,6 +7,7 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
 const gameRoutes = require("./routes/gameRoutes");
 const ratingRoutes = require("./routes/ratingRoutes");
+const userRoutes = require("./routes/userRoutes");
 const errorMiddleware = require("./middlewares/errorMiddleware");
 const authMiddleware = require("./middlewares/authMiddleware");
 
@@ -40,6 +41,7 @@ app.get("/api/dashboard", authMiddleware, (req, res) => {
 app.use("/api/auth", authRoutes);
 app.use("/api/games", gameRoutes);
 app.use("/api/ratings", ratingRoutes);
+app.use("/api/users", userRoutes);
 
 app.use(errorMiddleware);
 
